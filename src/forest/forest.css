@@ -1,0 +1,158 @@
+html, body {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.forest {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  border: 2px solid green;
+  display: flex;
+  background-color: rgb(113, 212, 113);
+}
+.forest_test {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 400px;
+  left: 400px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/parrot1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly 1.5s infinite, move 9s infinite;
+          animation: fly 1.5s infinite, move 9s infinite;
+}
+.forest_test img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.forest img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@-webkit-keyframes fly {
+  6% {
+    background-image: url("./images/parrot1.png");
+  }
+  18% {
+    background-image: url("./images/parrot3.png");
+  }
+  24% {
+    background-image: url("./images/parrot4.png");
+  }
+  30% {
+    background-image: url("./images/parrot5.png");
+  }
+  36% {
+    background-image: url("./images/parrot6.png");
+  }
+  42% {
+    background-image: url("./images/parrot7.png");
+  }
+  48% {
+    background-image: url("./images/parrot8.png");
+  }
+  60% {
+    background-image: url("./images/parrot7.png");
+  }
+  66% {
+    background-image: url("./images/parrot6.png");
+  }
+  72% {
+    background-image: url("./images/parrot5.png");
+  }
+  78% {
+    background-image: url("./images/parrot4.png");
+  }
+  84% {
+    background-image: url("./images/parrot3.png");
+  }
+  90% {
+    background-image: url("./images/parrot2.png");
+  }
+  100% {
+    background-image: url("./images/parrot1.png");
+  }
+}
+
+@keyframes fly {
+  6% {
+    background-image: url("./images/parrot1.png");
+  }
+  18% {
+    background-image: url("./images/parrot3.png");
+  }
+  24% {
+    background-image: url("./images/parrot4.png");
+  }
+  30% {
+    background-image: url("./images/parrot5.png");
+  }
+  36% {
+    background-image: url("./images/parrot6.png");
+  }
+  42% {
+    background-image: url("./images/parrot7.png");
+  }
+  48% {
+    background-image: url("./images/parrot8.png");
+  }
+  60% {
+    background-image: url("./images/parrot7.png");
+  }
+  66% {
+    background-image: url("./images/parrot6.png");
+  }
+  72% {
+    background-image: url("./images/parrot5.png");
+  }
+  78% {
+    background-image: url("./images/parrot4.png");
+  }
+  84% {
+    background-image: url("./images/parrot3.png");
+  }
+  90% {
+    background-image: url("./images/parrot2.png");
+  }
+  100% {
+    background-image: url("./images/parrot1.png");
+  }
+}
+@-webkit-keyframes move {
+  from {
+    left: 400px;
+    transform: rotate(0deg);
+    top: 400px;
+  }
+  to {
+    left: 890px;
+    transform: rotate(-10deg);
+    top: 150px;
+  }
+}
+@keyframes move {
+  from {
+    left: 400px;
+    transform: rotate(0deg);
+    top: 400px;
+  }
+  to {
+    left: 890px;
+    transform: rotate(-10deg);
+    top: 150px;
+  }
+}/*# sourceMappingURL=forest.css.map */
