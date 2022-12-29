@@ -8,32 +8,49 @@ import branch1 from "./images/branch1.png";
 import forest from "./images/forest.jpg";
 import ground from "./images/ground.png";
 import target from "./images/target.png";
+import dark from "./images/darkforest.png";
+import line from "./images/line.png";
 
 const Forest = () => {
 
     const [coors, setCoors] = useState([]);
     const [hit, setHit] = useState("");
-    
+    const [random_cor, setRandomcor] = useState([]);
     useEffect(() => {
         // 👇️ get global mouse coordinates
         const handleWindowMouseMove = event => {
             setCoors([event.screenX, event.screenY])
         };
+        function ranInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+        setTimeout(() => {
+            setRandomcor([0, ranInt(400)])
+        }, 2000);
+          
         document.addEventListener('mousemove', handleWindowMouseMove);
     
         return () => {
           document.removeEventListener('mousemove', handleWindowMouseMove);
         };
-      }, []);
+      }, [random_cor]);
 
 
     return ( 
     <>
     
     <div className="forest">
-        <div className="forest_test" onClick={()=> setHit("HIT")}>
+{/*         <div className="forest_test" onClick={()=> setHit("HIT")}>
 
+        </div> */}
+{/*         <div className="forest_parrot2" onClick={()=> setHit("HIT")}>
+
+        </div> */}
+        <div className="forest_parrot_effect" style={{left:random_cor[0], top:random_cor[1]}}>
+            
         </div>
+
+
         <div className="forest_branch">
             <img src={branch1} alt="dddd" />
         </div>
@@ -53,9 +70,15 @@ const Forest = () => {
             <img src={ground} alt="dddd" />
         </div>
 
-        <div style={{position:"absolute", left:coors[0], top:coors[1]-130, zIndex:"4"}}>
+        <div style={{position:"absolute", left:coors[0]-10, top:coors[1]-130, zIndex:"4"}}>
             <img src={target} alt="uuu"/>
         </div>
+        <div className="forest_dark">
+            <img src={dark} alt="dddd" />
+        </div>
+        <div className="forest_line">
+        </div>
+
         <h1>{hit}</h1>
     </div>
         

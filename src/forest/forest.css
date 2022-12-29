@@ -36,6 +36,37 @@ html, body {
   background-image: url("./images/parrot7.png");
   background-repeat: no-repeat;
   background-size: contain;
+  -webkit-animation: fly1 0.6s infinite, move 7.2s infinite;
+          animation: fly1 0.6s infinite, move 7.2s infinite;
+  z-index: 6;
+}
+.forest_parrot2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 200px;
+  right: 400px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly2 0.6s infinite, move2 7.2s infinite;
+          animation: fly2 0.6s infinite, move2 7.2s infinite;
+  z-index: 6;
+}
+.forest_parrot_effect {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/parrot7.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly1 0.6s infinite;
+          animation: fly1 0.6s infinite;
   z-index: 6;
 }
 .forest_branch {
@@ -104,7 +135,7 @@ html, body {
 }
 .forest_ground {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   width: 100vw;
   left: 0;
   top: -80px;
@@ -113,6 +144,31 @@ html, body {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.forest_dark {
+  position: absolute;
+  z-index: 1;
+  width: 40vw;
+  left: 0;
+  bottom: 1vh;
+}
+.forest_dark img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.forest_line {
+  position: absolute;
+  z-index: 7;
+  height: 300px;
+  left: 0;
+  top: 0;
+}
+.forest_line img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @-webkit-keyframes move {
@@ -186,5 +242,71 @@ html, body {
   }
   100% {
     background-image: url("./images/parrot8.png");
+  }
+}
+@-webkit-keyframes fly2 {
+  14% {
+    background-image: url("./images/p1.png");
+  }
+  28% {
+    background-image: url("./images/p2.png");
+  }
+  42% {
+    background-image: url("./images/p3.png");
+  }
+  56% {
+    background-image: url("./images/p4.png");
+  }
+  70% {
+    background-image: url("./images/p5.png");
+  }
+  84% {
+    background-image: url("./images/p6.png");
+  }
+  100% {
+    background-image: url("./images/p7.png");
+  }
+}
+@keyframes fly2 {
+  14% {
+    background-image: url("./images/p1.png");
+  }
+  28% {
+    background-image: url("./images/p2.png");
+  }
+  42% {
+    background-image: url("./images/p3.png");
+  }
+  56% {
+    background-image: url("./images/p4.png");
+  }
+  70% {
+    background-image: url("./images/p5.png");
+  }
+  84% {
+    background-image: url("./images/p6.png");
+  }
+  100% {
+    background-image: url("./images/p7.png");
+  }
+}
+@-webkit-keyframes move2 {
+  from {
+    right: -50px;
+    top: 200px;
+  }
+  to {
+    right: 1450px;
+    top: 400px;
+  }
+}
+@keyframes move2 {
+  from {
+    right: -50px;
+    top: 200px;
+  }
+  to {
+    right: 1450px;
+    top: 400px;
   }
 }/*# sourceMappingURL=forest.css.map */
