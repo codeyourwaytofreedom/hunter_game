@@ -1,27 +1,30 @@
 import "./forest.css";
-import parrot1 from "./images/parrot1.png";
-import parrot2 from "./images/parrot2.png";
-import parrot3 from "./images/parrot3.png";
-import parrot4 from "./images/parrot4.png";
-import parrot5 from "./images/parrot5.png";
-import parrot6 from "./images/parrot6.png";
-import parrot7 from "./images/parrot7.png";
-import parrot8 from "./images/parrot8.png";
 
+import tree3 from "./images/tree3.png";
+import stone1 from "./images/stone1.png";
+import tree2 from "./images/tree2.png";
+import branch1 from "./images/branch1.png";
+import forest from "./images/forest.jpg";
+import river from "./images/river.png";
 const Forest = () => {
     return ( 
     
     <div className="forest">
-        <div className="forest_test">
-            
+{/*         <div className="forest_test">
+        </div> */}
+        <div className="forest_branch">
+            <img src={branch1} alt="dddd" />
         </div>
-        <img src={parrot1} alt="" />
-        <img src={parrot2} alt="" />
-        <img src={parrot3} alt="" />
-        <img src={parrot4} alt="" />
-        <img src={parrot5} alt="" />
-        <img src={parrot6} alt="" />
-        <img src={parrot7} alt="" />
+        <div className="forest_stone1">
+            <img src={stone1} alt="" />
+        </div>
+        <div className="forest_tree">
+             <img src={tree3} alt="dddd" /> 
+        </div>
+        <div className="forest_tree2">
+            <img src={tree2} alt="dddd" />
+        </div>
+
     </div> );
 }
  
