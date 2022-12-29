@@ -1,17 +1,39 @@
 import "./forest.css";
+import { useEffect, useState } from "react";
 
 import tree3 from "./images/tree3.png";
 import stone1 from "./images/stone1.png";
 import tree2 from "./images/tree2.png";
 import branch1 from "./images/branch1.png";
 import forest from "./images/forest.jpg";
-import river from "./images/river.png";
+import ground from "./images/ground.png";
+import target from "./images/target.png";
+
 const Forest = () => {
+
+    const [coors, setCoors] = useState([]);
+    const [hit, setHit] = useState("");
+    
+    useEffect(() => {
+        // 👇️ get global mouse coordinates
+        const handleWindowMouseMove = event => {
+            setCoors([event.screenX, event.screenY])
+        };
+        document.addEventListener('mousemove', handleWindowMouseMove);
+    
+        return () => {
+          document.removeEventListener('mousemove', handleWindowMouseMove);
+        };
+      }, []);
+
+
     return ( 
+    <>
     
     <div className="forest">
-{/*         <div className="forest_test">
-        </div> */}
+        <div className="forest_test" onClick={()=> setHit("HIT")}>
+
+        </div>
         <div className="forest_branch">
             <img src={branch1} alt="dddd" />
         </div>
@@ -21,11 +43,25 @@ const Forest = () => {
         <div className="forest_tree">
              <img src={tree3} alt="dddd" /> 
         </div>
+        <div className="forest_tree1">
+             <img src={tree3} alt="dddd" /> 
+        </div>
         <div className="forest_tree2">
             <img src={tree2} alt="dddd" />
         </div>
+        <div className="forest_ground">
+            <img src={ground} alt="dddd" />
+        </div>
 
-    </div> );
+        <div style={{position:"absolute", left:coors[0], top:coors[1]-130, zIndex:"4"}}>
+            <img src={target} alt="uuu"/>
+        </div>
+        <h1>{hit}</h1>
+    </div>
+        
+    
+    
+    </> );
 }
  
 export default Forest;

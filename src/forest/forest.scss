@@ -6,6 +6,7 @@ html,body{
 }
 *{
     box-sizing: border-box;
+    user-select: none;
 }
 
 .forest{
@@ -17,25 +18,22 @@ html,body{
     background-color: rgb(249, 249, 195);
     overflow: hidden;
     background-image: url("./images/forest.jpg");
+    z-index: 1;
     &_test{
         //border:2px solid black;
         position: absolute;
         width: 100px;
         height: 100px;
         top:400px;
-        left:200px;
+        left:600px;
         display: grid;
         justify-content: center;
         align-items: center;
         background-image: url("./images/parrot7.png");
         background-repeat: no-repeat;
         background-size: contain;
-        animation: fly1 0.6s infinite, move 3s infinite;
-        img{
-            object-fit: contain;
-            width: 100%;
-            height: 100%;
-        }
+        //animation: fly1 0.6s infinite, move 7.2s infinite;
+        z-index: 6;
     }
     &_branch{
         position: absolute;
@@ -52,15 +50,29 @@ html,body{
     }
     &_tree{
         position: absolute;
-        width: 380px;
-        height: 90vh;
-        border: 2px solid red;
+        width: 250px;
+        height: 67vh;
+        //border: 2px solid red;
         bottom: 0;
         left: 0;
+        z-index: 7;
         img{
             width: 100%;
             object-fit: cover;
         }
+    }
+    &_tree1{
+        position: absolute;
+        width: 400px;
+        height: 95vh;
+        //border: 2px solid red;
+        bottom: 0;
+        left: 110px;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+        z-index: 7;
     }
     &_tree2{
         position: absolute;
@@ -88,12 +100,31 @@ html,body{
             object-fit: cover;
         }
     }
+    &_ground{
+        position: absolute;
+        //border: 2px solid black;
+        //border: 2px solid red;
+        z-index: 1;
+        width: 100vw;
+        left: 0;
+        top: -80px;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 
 @keyframes move {
-from{left:200px}
-to{left:400px;}
+from{
+    left:200px;
+    top:400px;
+}
+to{
+    left:1650px;
+    top:600px;
+}
 }
 
 @keyframes fly1 {
