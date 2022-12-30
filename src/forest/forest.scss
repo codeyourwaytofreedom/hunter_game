@@ -19,6 +19,7 @@ html,body{
     overflow: hidden;
     background-image: url("./images/forest.jpg");
     z-index: 1;
+    cursor: none;
     &_test{
         //border:2px solid black;
         position: absolute;
@@ -63,6 +64,33 @@ html,body{
         background-size: contain;
         animation: fly1 0.6s infinite;
         z-index: 6;
+        #bang{
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: bang 0.4s infinite;
+            
+        }
+    }
+    &_parrot_effect_dead{
+        //border:2px solid black;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./images/parrot7.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(70deg);
+        //animation: fly1 0.6s infinite;
+        z-index: 6;
+        #bang{
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: bang 0.4s infinite;
+            
+        }
     }
     &_branch{
         position: absolute;
@@ -203,12 +231,29 @@ to{
 }
 
 @keyframes move2 {
-    from{
-        right:-50px;
-        top:200px;
+from{
+    right:-50px;
+    top:200px;
+}
+to{
+    right:1450px;
+    top:400px;
+}
+}
+
+
+
+@keyframes bang {
+    0%{
+        background-image: url("./images/bang1.png");
     }
-    to{
-        right:1450px;
-        top:400px;
+    25%{
+        background-image: url("./images/bang2.png");
     }
+    50%{
+        background-image: url("./images/bang3.png");
     }
+    100%{
+        background-image: url("./images/bang4.png");
+    }
+}

@@ -10,36 +10,32 @@ import ground from "./images/ground.png";
 import target from "./images/target.png";
 import dark from "./images/darkforest.png";
 import line from "./images/line.png";
+import Parrot from "./parrot";
 
 const Forest = () => {
 
     const [coors, setCoors] = useState([]);
     const [hit, setHit] = useState("");
-    const [random_cor, setRandomcor] = useState([0,20]);
+    const shot = new Audio('https://rpg.hamsterrepublic.com/wiki-images/d/db/Crush8-Bit.ogg');
+
     useEffect(() => {
         // 👇️ get global mouse coordinates
         const handleWindowMouseMove = event => {
             setCoors([event.screenX, event.screenY])
         };
+        const play_shot = () => {
+            shot.play()
+        }
           
         document.addEventListener('mousemove', handleWindowMouseMove);
-    
+        document.addEventListener('click', play_shot);
         return () => {
           document.removeEventListener('mousemove', handleWindowMouseMove);
+          document.removeEventListener('click', play_shot);
         };
       }, []);
 
-      useEffect(() => {
-        function ranInt(max) {
-            return Math.floor(Math.random() * max);
-        }
-        //setRandomcor([0, ranInt(600)])
-      }, []);
-    const step = 0.035;
-    const vertical = 0;
-    setTimeout(() => {
-    setRandomcor([random_cor[0]+step, random_cor[1]+vertical])
-    }, 1);
+
 
     return ( 
     <>
@@ -48,12 +44,15 @@ const Forest = () => {
 {/*         <div className="forest_test" onClick={()=> setHit("HIT")}>
 
         </div> */}
-{/*         <div className="forest_parrot2" onClick={()=> setHit("HIT")}>
+        <div className="forest_parrot2" onClick={()=> setHit("HIT")}>
 
-        </div> */}
-        <div className="forest_parrot_effect" style={{left:`${random_cor[0]}vw`, top:`${random_cor[1]}vh`}}>
-            
         </div>
+
+        <audio id="myAudio" src="horse.mp3">
+        </audio>
+        
+        
+        <Parrot/>
 
 
         <div className="forest_branch">
