@@ -43,10 +43,20 @@ const Forest = () => {
     <div className="forest">
 
         <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
-        
-{/*         <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
+
+        <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
          
-        <Parrot className={"forest_parrot2"} direction={"toleft"}/>  */}
+        <Parrot className={"forest_parrot2"} direction={"toleft"}/> 
+
+        <div className="magazine">
+            {
+                [...Array(20)].map(e =>
+                    <div className="magazine_bullet">
+                    </div>
+                    )
+            }
+            
+        </div>
        
 
 

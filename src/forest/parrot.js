@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 const Parrot = ({className, direction}) => {
     const {innerWidth, innerHeight} = window;
     const starting_point = ranInt(innerHeight);
-    const [random_cor, setRandomcor] = useState([0,550]);
+    const [random_cor, setRandomcor] = useState([0,starting_point]);
     const [hit, setHit] = useState(false);
     function ranInt(max) {
         return Math.floor(Math.random() * max);
     }
 
-    const [step, setStep] = useState(3)
-    const [vertical, setVertical] = useState(1)
+    const [step, setStep] = useState(6)
+    const [vertical, setVertical] = useState(starting_point > innerHeight/2 ? -1 : 1)
     const [bang, setBang] = useState("");
 
     
@@ -51,8 +51,6 @@ const Parrot = ({className, direction}) => {
                     top:random_cor[1]}} 
                 
                 onClick={handle_hit}>
-                
-                {random_cor[1]}{innerHeight}
                 
                 <div id={bang} style={{position:"absolute", width:"100%", height:"100%", 
                              display:"grid", justifySelf:"center", alignSelf:"center"}}>

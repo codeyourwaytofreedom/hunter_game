@@ -17,7 +17,6 @@ html, body {
   display: grid;
   position: relative;
   height: 100vh;
-  border: 2px solid green;
   display: flex;
   background-color: rgb(249, 249, 195);
   overflow: hidden;
@@ -203,6 +202,25 @@ html, body {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.forest .magazine {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  width: 400px;
+  z-index: 8;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.4);
+  grid-template-columns: repeat(10, 1fr);
+}
+.forest .magazine_bullet {
+  border: 2px solid black;
+  background-image: url("./images/bullet.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100px;
 }
 
 @-webkit-keyframes move {
