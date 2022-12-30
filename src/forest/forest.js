@@ -43,8 +43,10 @@ const Forest = () => {
     <div className="forest">
 
         <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
-
-        <Parrot className={"forest_parrot2"} direction={"toleft"}/>
+        
+{/*         <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
+         
+        <Parrot className={"forest_parrot2"} direction={"toleft"}/>  */}
        
 
 
@@ -54,25 +56,33 @@ const Forest = () => {
         <div className="forest_stone1">
             <img src={stone1} alt="" />
         </div>
-        <div className="forest_tree">
+{/*         <div className="forest_tree">
              <img src={tree3} alt="dddd" /> 
-        </div>
+        </div> */}
+
         <div className="forest_tree1">
              <img src={tree3} alt="dddd" /> 
         </div>
+
+
         <div className="forest_tree2">
             <img src={tree2} alt="dddd" />
         </div>
+
         <div className="forest_ground">
             <img src={ground} alt="dddd" />
         </div>
 
-        <div style={{position:"absolute", left:coors[0]-10, top:coors[1]-130, zIndex:"4"}}>
+        <div style={{position:"absolute", left:coors[0]-10, top:coors[1]-130, zIndex:"5"}}>
             <img src={target} alt="uuu"/>
         </div>
+
+
         <div className="forest_dark">
             <img src={dark} alt="dddd" />
         </div>
+
+
         <div className="forest_line">
         </div>
 

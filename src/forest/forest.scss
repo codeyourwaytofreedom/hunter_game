@@ -25,8 +25,6 @@ html,body{
         position: absolute;
         width: 100px;
         height: 100px;
-        top:200px;
-        right:400px;
         display: grid;
         justify-content: center;
         align-items: center;
@@ -44,14 +42,14 @@ html,body{
         position: absolute;
         width: 100px;
         height: 100px;
-        top:200px;
-        right:400px;
         display: grid;
         justify-content: center;
         align-items: center;
         background-repeat: no-repeat;
         background-size: contain;
         z-index: 6;
+        transform: rotate(-90deg);
+        background-image: url("./images/p3.png");
         #bang{
             background-repeat: no-repeat;
             background-size: cover;
@@ -69,7 +67,7 @@ html,body{
         background-repeat: no-repeat;
         background-size: contain;
         animation: fly1 0.6s infinite;
-        z-index: 6;
+        z-index: 6 !important;
         #bang{
             background-repeat: no-repeat;
             background-size: cover;
@@ -115,10 +113,11 @@ html,body{
         //border: 2px solid red;
         bottom: 0;
         left: 0;
-        z-index: 7;
+        z-index: 5 !important;
         img{
             width: 100%;
             object-fit: cover;
+            z-index: 7 !important;
         }
     }
     &_tree1{
@@ -128,11 +127,11 @@ html,body{
         //border: 2px solid red;
         bottom: 0;
         left: 110px;
+        z-index: 3 !important;
         img{
             width: 100%;
             object-fit: cover;
         }
-        z-index: 7;
     }
     &_tree2{
         position: absolute;
@@ -233,16 +232,7 @@ to{
     100%{background-image: url("./images/p7.png");}
 }
 
-@keyframes move2 {
-from{
-    right:-50px;
-    top:200px;
-}
-to{
-    right:1450px;
-    top:400px;
-}
-}
+
 
 
 

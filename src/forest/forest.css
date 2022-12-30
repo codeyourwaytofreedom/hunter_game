@@ -29,8 +29,6 @@ html, body {
   position: absolute;
   width: 100px;
   height: 100px;
-  top: 200px;
-  right: 400px;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -50,14 +48,14 @@ html, body {
   position: absolute;
   width: 100px;
   height: 100px;
-  top: 200px;
-  right: 400px;
   display: grid;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 6;
+  transform: rotate(-90deg);
+  background-image: url("./images/p3.png");
 }
 .forest_parrot2_dead #bang {
   background-repeat: no-repeat;
@@ -77,7 +75,7 @@ html, body {
   background-size: contain;
   -webkit-animation: fly1 0.6s infinite;
           animation: fly1 0.6s infinite;
-  z-index: 6;
+  z-index: 6 !important;
 }
 .forest_parrot_effect #bang {
   background-repeat: no-repeat;
@@ -123,12 +121,13 @@ html, body {
   height: 67vh;
   bottom: 0;
   left: 0;
-  z-index: 7;
+  z-index: 5 !important;
 }
 .forest_tree img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 7 !important;
 }
 .forest_tree1 {
   position: absolute;
@@ -136,7 +135,7 @@ html, body {
   height: 95vh;
   bottom: 0;
   left: 110px;
-  z-index: 7;
+  z-index: 3 !important;
 }
 .forest_tree1 img {
   width: 100%;
@@ -323,26 +322,6 @@ html, body {
   }
   100% {
     background-image: url("./images/p7.png");
-  }
-}
-@-webkit-keyframes move2 {
-  from {
-    right: -50px;
-    top: 200px;
-  }
-  to {
-    right: 1450px;
-    top: 400px;
-  }
-}
-@keyframes move2 {
-  from {
-    right: -50px;
-    top: 200px;
-  }
-  to {
-    right: 1450px;
-    top: 400px;
   }
 }
 @-webkit-keyframes bang {
