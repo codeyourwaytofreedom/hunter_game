@@ -6,7 +6,7 @@ html,body{
 }
 *{
     box-sizing: border-box;
-    user-select: none;
+    user-select: none !important;
 }
 
 .forest{
@@ -20,22 +20,6 @@ html,body{
     background-image: url("./images/forest.jpg");
     z-index: 1;
     cursor: none;
-    &_test{
-        //border:2px solid black;
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        top:400px;
-        left:600px;
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        background-image: url("./images/parrot7.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        animation: fly1 0.6s infinite, move 7.2s infinite;
-        z-index: 6;
-    }
     &_parrot2{
         //border:2px solid black;
         position: absolute;
@@ -48,11 +32,33 @@ html,body{
         align-items: center;
         background-repeat: no-repeat;
         background-size: contain;
-        animation: fly2 0.6s infinite, move2 7.2s infinite;
+        animation: fly2 0.6s infinite;
         z-index: 6;
+        #bang{
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: bang 0.4s infinite;
+        }
+    }
+    &_parrot2_dead{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top:200px;
+        right:400px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 6;
+        #bang{
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation: bang 0.4s infinite;
+        }
     }
     &_parrot_effect{
-        //border:2px solid black;
         position: absolute;
         width: 100px;
         height: 100px;
@@ -68,11 +74,9 @@ html,body{
             background-repeat: no-repeat;
             background-size: cover;
             animation: bang 0.4s infinite;
-            
         }
     }
     &_parrot_effect_dead{
-        //border:2px solid black;
         position: absolute;
         width: 100px;
         height: 100px;
@@ -83,7 +87,6 @@ html,body{
         background-repeat: no-repeat;
         background-size: contain;
         transform: rotate(70deg);
-        //animation: fly1 0.6s infinite;
         z-index: 6;
         #bang{
             background-repeat: no-repeat;

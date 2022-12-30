@@ -7,10 +7,10 @@ html, body {
 
 * {
   box-sizing: border-box;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
 }
 
 .forest {
@@ -25,22 +25,6 @@ html, body {
   z-index: 1;
   cursor: none;
 }
-.forest_test {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 400px;
-  left: 600px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  background-image: url("./images/parrot7.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  -webkit-animation: fly1 0.6s infinite, move 7.2s infinite;
-          animation: fly1 0.6s infinite, move 7.2s infinite;
-  z-index: 6;
-}
 .forest_parrot2 {
   position: absolute;
   width: 100px;
@@ -52,9 +36,34 @@ html, body {
   align-items: center;
   background-repeat: no-repeat;
   background-size: contain;
-  -webkit-animation: fly2 0.6s infinite, move2 7.2s infinite;
-          animation: fly2 0.6s infinite, move2 7.2s infinite;
+  -webkit-animation: fly2 0.6s infinite;
+          animation: fly2 0.6s infinite;
   z-index: 6;
+}
+.forest_parrot2 #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_parrot2_dead {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 200px;
+  right: 400px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 6;
+}
+.forest_parrot2_dead #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
 }
 .forest_parrot_effect {
   position: absolute;

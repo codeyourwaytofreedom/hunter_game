@@ -41,18 +41,11 @@ const Forest = () => {
     <>
     
     <div className="forest">
-{/*         <div className="forest_test" onClick={()=> setHit("HIT")}>
 
-        </div> */}
-        <div className="forest_parrot2" onClick={()=> setHit("HIT")}>
+        <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
 
-        </div>
-
-        <audio id="myAudio" src="horse.mp3">
-        </audio>
-        
-        
-        <Parrot/>
+        <Parrot className={"forest_parrot2"} direction={"toleft"}/>
+       
 
 
         <div className="forest_branch">
