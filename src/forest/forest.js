@@ -17,6 +17,8 @@ const Forest = () => {
     const [coors, setCoors] = useState([]);
     const [hit, setHit] = useState("");
     const shot = new Audio('https://rpg.hamsterrepublic.com/wiki-images/d/db/Crush8-Bit.ogg');
+    const [rounds, setRounds] = useState(20);
+    const [score, setScore] = useState(0)
 
     useEffect(() => {
         // 👇️ get global mouse coordinates
@@ -24,7 +26,13 @@ const Forest = () => {
             setCoors([event.screenX, event.screenY])
         };
         const play_shot = () => {
-            shot.play()
+            
+            if(rounds !== 0)
+            {
+                setRounds(rounds-1);
+                shot.play();
+            }
+            
         }
           
         document.addEventListener('mousemove', handleWindowMouseMove);
@@ -33,7 +41,7 @@ const Forest = () => {
           document.removeEventListener('mousemove', handleWindowMouseMove);
           document.removeEventListener('click', play_shot);
         };
-      }, []);
+      });
 
 
 
@@ -42,22 +50,24 @@ const Forest = () => {
     
     <div className="forest">
 
-        <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
+        <Parrot className={"forest_parrot_effect"} direction={"toright"} score={score} setScore={setScore}/>
 
-        <Parrot className={"forest_parrot_effect"} direction={"toright"}/>
+        <Parrot className={"forest_parrot_effect"} direction={"toright"} score={score} setScore={setScore}/>
          
-        <Parrot className={"forest_parrot2"} direction={"toleft"}/> 
+       {/*  <Parrot className={"forest_parrot2"} direction={"toleft"} score={score} setScore={setScore}/>  */}
 
         <div className="magazine">
             {
-                [...Array(20)].map(e =>
+                [...Array(rounds)].map(e =>
                     <div className="magazine_bullet">
                     </div>
                     )
             }
-            
         </div>
-       
+
+       <h1 style={{position:"absolute", top:"0", left:"50vw"}}>
+        {score}
+       </h1>
 
 
         <div className="forest_branch">

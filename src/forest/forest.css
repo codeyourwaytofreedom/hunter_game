@@ -53,7 +53,6 @@ html, body {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 6;
-  transform: rotate(-90deg);
   background-image: url("./images/p3.png");
 }
 .forest_parrot2_dead #bang {
@@ -92,7 +91,6 @@ html, body {
   background-image: url("./images/parrot7.png");
   background-repeat: no-repeat;
   background-size: contain;
-  transform: rotate(70deg);
   z-index: 6;
 }
 .forest_parrot_effect_dead #bang {
@@ -209,7 +207,7 @@ html, body {
   bottom: 0;
   height: 200px;
   width: 400px;
-  z-index: 8;
+  z-index: 5;
   display: grid;
   background-color: rgba(0, 0, 0, 0.4);
   grid-template-columns: repeat(10, 1fr);
