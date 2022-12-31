@@ -99,6 +99,82 @@ html, body {
   -webkit-animation: bang 0.4s infinite;
           animation: bang 0.4s infinite;
 }
+.forest_parrot3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/parrot7.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly3 0.6s infinite;
+          animation: fly3 0.6s infinite;
+  z-index: 6 !important;
+}
+.forest_parrot3 #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_parrot3_dead {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/parrot77.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 6;
+}
+.forest_parrot3_dead #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_serious {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/serious7.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly_serious 0.6s infinite;
+          animation: fly_serious 0.6s infinite;
+  z-index: 6 !important;
+}
+.forest_serious #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_serious_dead {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/serious7.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 6;
+}
+.forest_serious_dead #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
 .forest_branch {
   position: absolute;
   right: 0;
@@ -111,20 +187,6 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.forest_tree {
-  position: absolute;
-  width: 250px;
-  height: 67vh;
-  bottom: 0;
-  left: 0;
-  z-index: 5 !important;
-}
-.forest_tree img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 7 !important;
 }
 .forest_tree1 {
   position: absolute;
@@ -338,6 +400,110 @@ html, body {
   }
   100% {
     background-image: url("./images/p7.png");
+  }
+}
+@-webkit-keyframes fly3 {
+  12% {
+    background-image: url("./images/parrot11.png");
+  }
+  25% {
+    background-image: url("./images/parrot22.png");
+  }
+  37% {
+    background-image: url("./images/parrot33.png");
+  }
+  50% {
+    background-image: url("./images/parrot44.png");
+  }
+  62% {
+    background-image: url("./images/parrot55.png");
+  }
+  75% {
+    background-image: url("./images/parrot66.png");
+  }
+  87% {
+    background-image: url("./images/parrot77.png");
+  }
+  100% {
+    background-image: url("./images/parrot88.png");
+  }
+}
+@keyframes fly3 {
+  12% {
+    background-image: url("./images/parrot11.png");
+  }
+  25% {
+    background-image: url("./images/parrot22.png");
+  }
+  37% {
+    background-image: url("./images/parrot33.png");
+  }
+  50% {
+    background-image: url("./images/parrot44.png");
+  }
+  62% {
+    background-image: url("./images/parrot55.png");
+  }
+  75% {
+    background-image: url("./images/parrot66.png");
+  }
+  87% {
+    background-image: url("./images/parrot77.png");
+  }
+  100% {
+    background-image: url("./images/parrot88.png");
+  }
+}
+@-webkit-keyframes fly_serious {
+  12% {
+    background-image: url("./images/serious1.png");
+  }
+  25% {
+    background-image: url("./images/serious2.png");
+  }
+  37% {
+    background-image: url("./images/serious3.png");
+  }
+  50% {
+    background-image: url("./images/serious4.png");
+  }
+  62% {
+    background-image: url("./images/serious5.png");
+  }
+  75% {
+    background-image: url("./images/serious6.png");
+  }
+  87% {
+    background-image: url("./images/serious7.png");
+  }
+  100% {
+    background-image: url("./images/serious8.png");
+  }
+}
+@keyframes fly_serious {
+  12% {
+    background-image: url("./images/serious1.png");
+  }
+  25% {
+    background-image: url("./images/serious2.png");
+  }
+  37% {
+    background-image: url("./images/serious3.png");
+  }
+  50% {
+    background-image: url("./images/serious4.png");
+  }
+  62% {
+    background-image: url("./images/serious5.png");
+  }
+  75% {
+    background-image: url("./images/serious6.png");
+  }
+  87% {
+    background-image: url("./images/serious7.png");
+  }
+  100% {
+    background-image: url("./images/serious8.png");
   }
 }
 @-webkit-keyframes bang {

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-const Parrot = ({className, direction,setScore, score}) => {
+const Parrot = ({className, direction,setScore, score, speed, point}) => {
     const {innerWidth, innerHeight} = window;
     const starting_point = ranInt(innerHeight);
 
     const [angle, setAngle] = useState(
                                         starting_point > innerHeight/2 && direction === "toright" || 
-                                        starting_point < innerHeight/2 && direction === "toleft"  ? ranRange(15,25) :
+                                        starting_point < innerHeight/2 && direction === "toleft"  ? ranRange(10,15) :
                                         
                                         starting_point < innerHeight/2 && direction === "toright" ||
-                                        starting_point > innerHeight/2 && direction === "toleft" ?  -ranRange(15,25) : 
+                                        starting_point > innerHeight/2 && direction === "toleft" ?  -ranRange(10,15) : 
                                         0
     );
 
@@ -26,7 +26,7 @@ const Parrot = ({className, direction,setScore, score}) => {
         return Math.random() * (max - min) + min;
     }
 
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(speed)
     const [vertical, setVertical] = useState(starting_point > innerHeight/2 ? -1 : 1)
     const [bang, setBang] = useState("");
 
@@ -52,7 +52,7 @@ const Parrot = ({className, direction,setScore, score}) => {
     const handle_hit = () => {
         setAngle(direction === "toright" ? -80 : 80);
         setHit(true);
-        setScore(score+50)
+        setScore(score+point)
         setVertical(4.9);
         setStep(1);
         setBang("bang");

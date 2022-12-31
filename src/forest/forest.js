@@ -50,11 +50,35 @@ const Forest = () => {
     
     <div className="forest">
 
-        <Parrot className={"forest_parrot_effect"} direction={"toright"} score={score} setScore={setScore}/>
+        <Parrot className={"forest_parrot_effect"} 
+                direction={"toright"} 
+                score={score} 
+                setScore={setScore} 
+                speed={5}
+                point={50}
+        />
 
-        <Parrot className={"forest_parrot_effect"} direction={"toright"} score={score} setScore={setScore}/>
+        <Parrot className={"forest_parrot3"} 
+                direction={"toright"} 
+                score={score} 
+                setScore={setScore} 
+                speed={5}
+                point={50}
+        />
+
+        <Parrot className={"forest_serious"} 
+                direction={"toleft"} 
+                score={score} 
+                setScore={setScore} 
+                speed={9}
+                point={100}
+        />
+
+
+
+        {/* <Parrot className={"forest_parrot_effect"} direction={"toright"} score={score} setScore={setScore}/> */}
          
-       {/*  <Parrot className={"forest_parrot2"} direction={"toleft"} score={score} setScore={setScore}/>  */}
+        {/* <Parrot className={"forest_parrot2"} direction={"toleft"} score={score} setScore={setScore}/>  */}
 
         <div className="magazine">
             {
@@ -76,19 +100,12 @@ const Forest = () => {
         <div className="forest_stone1">
             <img src={stone1} alt="" />
         </div>
-{/*         <div className="forest_tree">
-             <img src={tree3} alt="dddd" /> 
-        </div> */}
-
         <div className="forest_tree1">
              <img src={tree3} alt="dddd" /> 
         </div>
-
-
         <div className="forest_tree2">
             <img src={tree2} alt="dddd" />
         </div>
-
         <div className="forest_ground">
             <img src={ground} alt="dddd" />
         </div>
