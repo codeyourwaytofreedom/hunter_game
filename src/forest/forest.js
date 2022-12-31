@@ -48,6 +48,32 @@ const Forest = () => {
         };
       });
 
+    const ranRange = (min, max) => {
+        return Math.random() * (max - min) + min;
+    }
+    const [parrots, setParrots] = useState([{
+        class: "forest_raven",
+        direction: "toright",
+        speed:5,
+        point:50
+    }])
+
+    useEffect(() => {
+        const move = setTimeout(() => {
+            setParrots([...parrots,{
+                class: "forest_serious",
+                direction: "toleft",
+                speed:5,
+                point:50
+            }])
+        }, 3000);
+        if(rounds === 1)
+        {
+            clearTimeout(move)
+        }
+    }, [rounds]);
+    
+
 
 
     return ( 
@@ -55,7 +81,21 @@ const Forest = () => {
     
     <div className="forest">
 
-        <Parrot className={"forest_parrot_effect"} 
+        {
+            parrots.map(e => 
+                <Parrot
+                className={e.class} 
+                direction={e.direction} 
+                score={score} 
+                setScore={setScore} 
+                speed={e.speed}
+                point={e.point}
+            />
+            )
+        }
+                   
+
+{/*         <Parrot className={"forest_parrot_effect"} 
                 direction={"toright"} 
                 score={score} 
                 setScore={setScore} 
@@ -93,13 +133,8 @@ const Forest = () => {
                 setScore={setScore} 
                 speed={4}
                 point={400}
-        />
+        /> */}
 
-
-
-        {/* <Parrot className={"forest_parrot_effect"} direction={"toright"} score={score} setScore={setScore}/> */}
-         
-        {/* <Parrot className={"forest_parrot2"} direction={"toleft"} score={score} setScore={setScore}/>  */}
 
         <div className="magazine">
             {
