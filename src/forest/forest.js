@@ -11,6 +11,7 @@ import target from "./images/target.png";
 import dark from "./images/darkforest.png";
 import line from "./images/line.png";
 import Parrot from "./parrot";
+import main_parrot from "./images/main_parrot.png";
 
 const Forest = () => {
 
@@ -18,7 +19,8 @@ const Forest = () => {
     const [hit, setHit] = useState("");
     const shot = new Audio('https://rpg.hamsterrepublic.com/wiki-images/d/db/Crush8-Bit.ogg');
     const [rounds, setRounds] = useState(20);
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0);
+    const [modal, setModal] = useState(false)
 
     useEffect(() => {
         // 👇️ get global mouse coordinates
@@ -34,7 +36,7 @@ const Forest = () => {
             }
             if(rounds===1)
             {
-                
+                setModal(true)
             }
         }
           
@@ -53,7 +55,7 @@ const Forest = () => {
     
     <div className="forest">
 
-{/*         <Parrot className={"forest_parrot_effect"} 
+        <Parrot className={"forest_parrot_effect"} 
                 direction={"toright"} 
                 score={score} 
                 setScore={setScore} 
@@ -73,23 +75,23 @@ const Forest = () => {
                 direction={"toleft"} 
                 score={score} 
                 setScore={setScore} 
-                speed={9}
+                speed={4}
                 point={100}
-        /> */}
-{/* 
+        />
+
         <Parrot className={"forest_raven"} 
                 direction={"toright"} 
                 score={score} 
                 setScore={setScore} 
-                speed={9}
+                speed={5}
                 point={200}
-        /> */}
+        />
 
         <Parrot className={"forest_red"} 
                 direction={"toleft"} 
                 score={score} 
                 setScore={setScore} 
-                speed={11}
+                speed={4}
                 point={400}
         />
 
@@ -143,6 +145,32 @@ const Forest = () => {
         </div>
 
         <h1>{hit}</h1>
+
+        <div className="forest_the_end" style={{display: modal ? "grid" : "none"}}>
+            <div className="forest_the_end_kernel">
+                <div className="forest_the_end_kernel_image">
+                    <img src={main_parrot} alt="egeg" />
+                </div>
+                <div className="forest_the_end_kernel_feedback">
+                    <div id="ammo">
+                        Run out of ammo!
+                    </div>
+                    <div id="score">
+                        Score: {score}
+                    </div>
+                    <div id="mock">
+                        {score < 500 ? "You definitely need some practice" : "Hell of a Hunter"}
+                    </div>
+                    <div id="restart" onClick={() => {setModal(false); setRounds(21); setScore(0)}}>
+                        Restart
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
     </div>
         
     

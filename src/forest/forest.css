@@ -24,6 +24,56 @@ html, body {
   z-index: 1;
   cursor: none;
 }
+.forest_the_end {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999 !important;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  cursor: auto;
+}
+.forest_the_end_kernel {
+  display: flex;
+}
+.forest_the_end_kernel_image {
+  height: 500px;
+}
+.forest_the_end_kernel_image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.forest_the_end_kernel_feedback {
+  width: 300px;
+  display: grid;
+}
+.forest_the_end_kernel_feedback div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: white;
+}
+.forest_the_end_kernel_feedback #ammo {
+  background-image: linear-gradient(red, turquoise);
+}
+.forest_the_end_kernel_feedback #score {
+  background-image: linear-gradient(turquoise, purple);
+}
+.forest_the_end_kernel_feedback #mock {
+  background-image: linear-gradient(purple, yellow);
+  font-size: 30px;
+  text-align: center;
+}
+.forest_the_end_kernel_feedback #restart {
+  background-image: linear-gradient(yellow, green);
+  cursor: pointer;
+}
 .forest_parrot2 {
   position: absolute;
   width: 100px;
