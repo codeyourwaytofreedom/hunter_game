@@ -3,13 +3,27 @@ import { useEffect, useState } from "react";
 const Parrot = ({className, direction,setScore, score}) => {
     const {innerWidth, innerHeight} = window;
     const starting_point = ranInt(innerHeight);
-    const [angle, setAngle] = useState(starting_point > innerHeight/2 ? ranInt(30) : -ranInt(30));
+
+    const [angle, setAngle] = useState(
+                                        starting_point > innerHeight/2 && direction === "toright" || 
+                                        starting_point < innerHeight/2 && direction === "toleft"  ? ranRange(15,25) :
+                                        
+                                        starting_point < innerHeight/2 && direction === "toright" ||
+                                        starting_point > innerHeight/2 && direction === "toleft" ?  -ranRange(15,25) : 
+                                        0
+    );
+
+
     const [random_cor, setRandomcor] = useState([0,starting_point]);
     const [hit, setHit] = useState(false);
 
 
     function ranInt(max) {
         return Math.floor(Math.random() * max);
+    }
+
+    function ranRange(min, max) {
+        return Math.random() * (max - min) + min;
     }
 
     const [step, setStep] = useState(1)
@@ -19,7 +33,7 @@ const Parrot = ({className, direction,setScore, score}) => {
     
 
     useEffect(() => {
-            if (random_cor[1] > (innerHeight-50) && !hit) {setVertical(-1);}  
+            if (random_cor[1] > (innerHeight-50) && !hit) {setVertical(-1);setAngle(-angle)}  
             if (random_cor[1] < 10 && !hit) {setVertical(1); setAngle(-angle)} 
 
             const move = setTimeout(() => {
@@ -36,7 +50,7 @@ const Parrot = ({className, direction,setScore, score}) => {
 
 
     const handle_hit = () => {
-        setAngle(direction === "toright" ? 80 : -80);
+        setAngle(direction === "toright" ? -80 : 80);
         setHit(true);
         setScore(score+50)
         setVertical(4.9);
@@ -62,6 +76,8 @@ const Parrot = ({className, direction,setScore, score}) => {
                 <div id={bang} style={{position:"absolute", width:"100%", height:"100%", 
                              display:"grid", justifySelf:"center", alignSelf:"center"}}>
                 </div>
+
+                {/* <h1>{String(angle).substring(0,2)}</h1> */}
         </div>
      );
 }
