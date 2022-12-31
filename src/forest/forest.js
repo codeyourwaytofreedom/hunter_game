@@ -51,6 +51,12 @@ const Forest = () => {
     const ranRange = (min, max) => {
         return Math.random() * (max - min) + min;
     }
+
+    const ranInt = (max) => {
+        return Math.floor(Math.random() * max);
+    }
+
+
     const [parrots, setParrots] = useState([{
         class: "forest_raven",
         direction: "toright",
@@ -58,16 +64,38 @@ const Forest = () => {
         point:50
     }])
 
+
+    const directions = ["toright", "toleft"];
+    const classes = [
+                    {class:"forest_serious", direction: "toleft"}, 
+                    {class:"forest_raven", direction: "toright"}, 
+                    {class:"forest_parrot2", direction: "toleft"}, 
+                    {class:"forest_parrot_effect", direction: "toright"}, 
+                    {class:"forest_red", direction: "toleft"},
+                    {class:"forest_parrot3", direction: "toright"},
+        ]
+
     useEffect(() => {
         const move = setTimeout(() => {
-            setParrots([...parrots,{
-                class: "forest_serious",
-                direction: "toleft",
-                speed:5,
-                point:50
-            }])
+            const parrot = classes[ranInt(6)];
+            setParrots([...parrots,
+                ...[
+                    {
+                        class: parrot.class,
+                        direction: parrot.direction,
+                        speed:5,
+                        point:50
+                    },
+                    /* {
+                        class: "forest_serious",
+                        direction: "toleft",
+                        speed:5,
+                        point:50
+                    } */
+                    ]
+        ])
         }, 3000);
-        if(rounds === 1)
+        if(rounds === 0)
         {
             clearTimeout(move)
         }
