@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/src/forest/images
+
 # testing
 /coverage
 

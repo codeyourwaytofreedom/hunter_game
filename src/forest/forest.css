@@ -175,6 +175,82 @@ html, body {
   -webkit-animation: bang 0.4s infinite;
           animation: bang 0.4s infinite;
 }
+.forest_raven {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/ravon6.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly_raven 0.6s infinite;
+          animation: fly_raven 0.6s infinite;
+  z-index: 6 !important;
+}
+.forest_raven #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_raven_dead {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/ravon6.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 6;
+}
+.forest_raven_dead #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_red {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/red6.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation: fly_red 0.6s infinite;
+          animation: fly_red 0.6s infinite;
+  z-index: 6 !important;
+}
+.forest_red #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
+.forest_red_dead {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/red6.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 6;
+}
+.forest_red_dead #bang {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: bang 0.4s infinite;
+          animation: bang 0.4s infinite;
+}
 .forest_branch {
   position: absolute;
   right: 0;
@@ -504,6 +580,110 @@ html, body {
   }
   100% {
     background-image: url("./images/serious8.png");
+  }
+}
+@-webkit-keyframes fly_raven {
+  0% {
+    background-image: url("./images/ravon2.png");
+  }
+  15% {
+    background-image: url("./images/ravon3.png");
+  }
+  30% {
+    background-image: url("./images/ravon4.png");
+  }
+  45% {
+    background-image: url("./images/ravon5.png");
+  }
+  60% {
+    background-image: url("./images/ravon6.png");
+  }
+  75% {
+    background-image: url("./images/ravon7.png");
+  }
+  87% {
+    background-image: url("./images/ravon8.png");
+  }
+  100% {
+    background-image: url("./images/ravon9.png");
+  }
+}
+@keyframes fly_raven {
+  0% {
+    background-image: url("./images/ravon2.png");
+  }
+  15% {
+    background-image: url("./images/ravon3.png");
+  }
+  30% {
+    background-image: url("./images/ravon4.png");
+  }
+  45% {
+    background-image: url("./images/ravon5.png");
+  }
+  60% {
+    background-image: url("./images/ravon6.png");
+  }
+  75% {
+    background-image: url("./images/ravon7.png");
+  }
+  87% {
+    background-image: url("./images/ravon8.png");
+  }
+  100% {
+    background-image: url("./images/ravon9.png");
+  }
+}
+@-webkit-keyframes fly_red {
+  0% {
+    background-image: url("./images/red1.png");
+  }
+  15% {
+    background-image: url("./images/red2.png");
+  }
+  30% {
+    background-image: url("./images/red3.png");
+  }
+  45% {
+    background-image: url("./images/red4.png");
+  }
+  60% {
+    background-image: url("./images/red5.png");
+  }
+  75% {
+    background-image: url("./images/red6.png");
+  }
+  87% {
+    background-image: url("./images/red7.png");
+  }
+  100% {
+    background-image: url("./images/red8.png");
+  }
+}
+@keyframes fly_red {
+  0% {
+    background-image: url("./images/red1.png");
+  }
+  15% {
+    background-image: url("./images/red2.png");
+  }
+  30% {
+    background-image: url("./images/red3.png");
+  }
+  45% {
+    background-image: url("./images/red4.png");
+  }
+  60% {
+    background-image: url("./images/red5.png");
+  }
+  75% {
+    background-image: url("./images/red6.png");
+  }
+  87% {
+    background-image: url("./images/red7.png");
+  }
+  100% {
+    background-image: url("./images/red8.png");
   }
 }
 @-webkit-keyframes bang {

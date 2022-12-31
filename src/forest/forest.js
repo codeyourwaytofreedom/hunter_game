@@ -32,7 +32,10 @@ const Forest = () => {
                 setRounds(rounds-1);
                 shot.play();
             }
-            
+            if(rounds===1)
+            {
+                
+            }
         }
           
         document.addEventListener('mousemove', handleWindowMouseMove);
@@ -50,11 +53,11 @@ const Forest = () => {
     
     <div className="forest">
 
-        <Parrot className={"forest_parrot_effect"} 
+{/*         <Parrot className={"forest_parrot_effect"} 
                 direction={"toright"} 
                 score={score} 
                 setScore={setScore} 
-                speed={5}
+                speed={6}
                 point={50}
         />
 
@@ -62,7 +65,7 @@ const Forest = () => {
                 direction={"toright"} 
                 score={score} 
                 setScore={setScore} 
-                speed={5}
+                speed={6}
                 point={50}
         />
 
@@ -72,6 +75,22 @@ const Forest = () => {
                 setScore={setScore} 
                 speed={9}
                 point={100}
+        /> */}
+{/* 
+        <Parrot className={"forest_raven"} 
+                direction={"toright"} 
+                score={score} 
+                setScore={setScore} 
+                speed={9}
+                point={200}
+        /> */}
+
+        <Parrot className={"forest_red"} 
+                direction={"toleft"} 
+                score={score} 
+                setScore={setScore} 
+                speed={11}
+                point={400}
         />
 
 
