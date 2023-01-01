@@ -22,6 +22,10 @@ const Forest = () => {
     const [score, setScore] = useState(0);
     const [modal, setModal] = useState(false)
 
+
+    const [time, setTime] = useState(0)
+
+
     useEffect(() => {
         // 👇️ get global mouse coordinates
         const handleWindowMouseMove = event => {
@@ -65,6 +69,9 @@ const Forest = () => {
     const [more, setMore] = useState([
     ])
 
+    const [red, setRed] = useState([
+    ])
+
     const classes = [
                     {class:"forest_serious", direction: "toleft", speed:9, point:250}, 
                     {class:"forest_raven", direction: "toright",speed:7, point:150},  
@@ -76,31 +83,40 @@ const Forest = () => {
 
     useEffect(() => {
         const move = setTimeout(() => {
-            setParrots([...parrots, ...[classes[0],classes[5]]]);
+            setParrots([...parrots, classes[5]]);
         }, 2000);
 
         const addmore = setTimeout(() => {
             setMore([...more, classes[2]]);
         }, 3000);
 
+        const addred = setTimeout(() => {
+            setRed([...red, classes[4]]);
+        }, 3000);
+
         if(rounds === 0)
         {
             clearTimeout(move);
-            clearTimeout(addmore)
+            clearTimeout(addmore);
+            clearTimeout(addred);
         }
     });
 
-    const [time, setTime] = useState(0)
 
-    useEffect(() => {
-        
-    const restart = setTimeout(() => {
-        setTime(time+1)
-    }, 1000);
+    useEffect(() => {   
+        const restart = setTimeout(() => {
+            setTime(time+1)
+        }, 1000);
 
-        if(time === 60)
+        if(time === 20)
         {
-            clearTimeout(restart)
+            clearTimeout(restart);
+            setModal(true);
+            setRounds(1)
+        }
+        if(modal)
+        {
+            clearTimeout(restart);
         }
       }, [time]);
 
@@ -135,47 +151,19 @@ const Forest = () => {
             />
             )
         }
-                   
-
-{/*         <Parrot className={"forest_parrot_effect"} 
-                direction={"toright"} 
+        {
+           red && red.map(e => 
+                <Parrot
+                className={e.class} 
+                direction={e.direction} 
                 score={score} 
                 setScore={setScore} 
-                speed={6}
-                point={50}
-        />
+                speed={e.speed}
+                point={e.point}
+            />
+            )
+        }
 
-        <Parrot className={"forest_parrot3"} 
-                direction={"toright"} 
-                score={score} 
-                setScore={setScore} 
-                speed={6}
-                point={50}
-        />
-
-        <Parrot className={"forest_serious"} 
-                direction={"toleft"} 
-                score={score} 
-                setScore={setScore} 
-                speed={4}
-                point={100}
-        />
-
-        <Parrot className={"forest_raven"} 
-                direction={"toright"} 
-                score={score} 
-                setScore={setScore} 
-                speed={5}
-                point={200}
-        />
-
-        <Parrot className={"forest_red"} 
-                direction={"toleft"} 
-                score={score} 
-                setScore={setScore} 
-                speed={4}
-                point={400}
-        /> */}
 
 
         <div className="magazine">
@@ -238,12 +226,13 @@ const Forest = () => {
                     </div>
                     <div id="mock">
                         {
+                            score < 500 ? "You suck at hunting dude!" :
                             score > 500 && score < 900 ? "Future Prospect" :
                             score > 900 && score < 1200 ? "You are some hunter!":
-                            score > 1500 ? "I wouldn't want to confront you" : "You suck at hunting dude!" 
+                            score > 1200 && score <1500 ? "I wouldn't want to confront you" : "Damn! You are a warrior!" 
                         }
                     </div>
-                    <div id="restart" onClick={() => {setModal(false); setRounds(21); setScore(0)}}>
+                    <div id="restart" onClick={() => {setModal(false); setRounds(21); setScore(0); setTime(0)}}>
                         Restart
                     </div>
                 </div>
