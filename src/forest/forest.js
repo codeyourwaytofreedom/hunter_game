@@ -72,11 +72,14 @@ const Forest = () => {
     const [red, setRed] = useState([
     ])
 
+    const [raven, setRaven] = useState([
+    ])
+
     const classes = [
                     {class:"forest_serious", direction: "toleft", speed:9, point:250}, 
                     {class:"forest_raven", direction: "toright",speed:7, point:150},  
-                    {class:"forest_parrot2", direction: "toleft", speed:5, point:50}, 
-                    {class:"forest_parrot_effect", direction: "toright", speed:5, point:50}, 
+                    {class:"forest_parrot2", direction: "toleft", speed:7, point:150}, 
+                    {class:"forest_parrot_effect", direction: "toright", speed:8, point:200}, 
                     {class:"forest_red", direction: "toleft", speed:10, point:300},
                     {class:"forest_parrot3", direction: "toright", speed:6, point:100},
         ]
@@ -87,18 +90,23 @@ const Forest = () => {
         }, 2000);
 
         const addmore = setTimeout(() => {
-            setMore([...more, classes[2]]);
+            setMore([...more, classes[3]]);
         }, 3000);
 
         const addred = setTimeout(() => {
             setRed([...red, classes[4]]);
-        }, 3000);
+        }, 5000);
+
+        const addraven = setTimeout(() => {
+            setRaven([...raven, classes[0]]);
+        }, 6000);
 
         if(rounds === 0)
         {
             clearTimeout(move);
             clearTimeout(addmore);
             clearTimeout(addred);
+            clearTimeout(addraven);
         }
     });
 
@@ -108,11 +116,11 @@ const Forest = () => {
             setTime(time+1)
         }, 1000);
 
-        if(time === 20)
+        if(time === 30)
         {
             clearTimeout(restart);
             setModal(true);
-            setRounds(1)
+            setRounds(0)
         }
         if(modal)
         {
@@ -153,6 +161,18 @@ const Forest = () => {
         }
         {
            red && red.map(e => 
+                <Parrot
+                className={e.class} 
+                direction={e.direction} 
+                score={score} 
+                setScore={setScore} 
+                speed={e.speed}
+                point={e.point}
+            />
+            )
+        }
+        {
+           raven && raven.map(e => 
                 <Parrot
                 className={e.class} 
                 direction={e.direction} 
@@ -219,17 +239,17 @@ const Forest = () => {
                 </div>
                 <div className="forest_the_end_kernel_feedback">
                     <div id="ammo">
-                        Run out of ammo!
+                        Game over!
                     </div>
                     <div id="score">
                         Score: {score}
                     </div>
                     <div id="mock">
                         {
-                            score < 500 ? "You suck at hunting dude!" :
-                            score > 500 && score < 900 ? "Future Prospect" :
-                            score > 900 && score < 1200 ? "You are some hunter!":
-                            score > 1200 && score <1500 ? "I wouldn't want to confront you" : "Damn! You are a warrior!" 
+                            score < 900 ? "You suck at hunting dude!" :
+                            score > 900 && score < 1200 ? "Future Prospect" :
+                            score > 1200 && score < 1700 ? "You are some hunter!":
+                            score > 1700 && score <2000 ? "I wouldn't want to confront you" : "Damn! You are a warrior!" 
                         }
                     </div>
                     <div id="restart" onClick={() => {setModal(false); setRounds(21); setScore(0); setTime(0)}}>
