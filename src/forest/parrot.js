@@ -44,7 +44,7 @@ const Parrot = ({className, direction,setScore, score, speed, point}) => {
             if(random_cor[0] > innerWidth || random_cor[1] > innerHeight)
             {
                 clearTimeout(move)
-            }  
+            } 
     }, [random_cor]);
 
 

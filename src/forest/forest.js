@@ -36,7 +36,7 @@ const Forest = () => {
             }
             if(rounds===1)
             {
-                setModal(true)
+                setModal(true);
             }
         }
           
@@ -60,9 +60,10 @@ const Forest = () => {
    // const [parrots, setParrots] = useState([ranInt(6), ranInt(6), ranInt(6)]);
 
     const [parrots, setParrots] = useState([
-        //{class:"forest_raven", direction: "toright",speed:7, point:150}
     ])
 
+    const [more, setMore] = useState([
+    ])
 
     const classes = [
                     {class:"forest_serious", direction: "toleft", speed:9, point:250}, 
@@ -75,17 +76,35 @@ const Forest = () => {
 
     useEffect(() => {
         const move = setTimeout(() => {
-            setParrots([...parrots, classes[5]]);
+            setParrots([...parrots, ...[classes[0],classes[5]]]);
         }, 2000);
+
+        const addmore = setTimeout(() => {
+            setMore([...more, classes[2]]);
+        }, 3000);
 
         if(rounds === 0)
         {
-            clearTimeout(move)
+            clearTimeout(move);
+            clearTimeout(addmore)
         }
-    },[rounds]);
+    });
+
+    const [time, setTime] = useState(0)
+
+    useEffect(() => {
+        
+    const restart = setTimeout(() => {
+        setTime(time+1)
+    }, 1000);
+
+        if(time === 60)
+        {
+            clearTimeout(restart)
+        }
+      }, [time]);
+
     
-
-
 
     return ( 
     <>
@@ -94,6 +113,18 @@ const Forest = () => {
 
         {
            parrots && parrots.map(e => 
+                <Parrot
+                className={e.class} 
+                direction={e.direction} 
+                score={score} 
+                setScore={setScore} 
+                speed={e.speed}
+                point={e.point}
+            />
+            )
+        }
+        {
+           more && more.map(e => 
                 <Parrot
                 className={e.class} 
                 direction={e.direction} 
@@ -191,6 +222,7 @@ const Forest = () => {
         </div>
 
         <h1>{hit}</h1>
+        <h1>{time}</h1>
 
         <div className="forest_the_end" style={{display: modal ? "grid" : "none"}}>
             <div className="forest_the_end_kernel">
@@ -205,7 +237,11 @@ const Forest = () => {
                         Score: {score}
                     </div>
                     <div id="mock">
-                        {score < 500 ? "You definitely need some practice" : "Hell of a Hunter"}
+                        {
+                            score > 500 && score < 900 ? "Future Prospect" :
+                            score > 900 && score < 1200 ? "You are some hunter!":
+                            score > 1500 ? "I wouldn't want to confront you" : "You suck at hunting dude!" 
+                        }
                     </div>
                     <div id="restart" onClick={() => {setModal(false); setRounds(21); setScore(0)}}>
                         Restart
