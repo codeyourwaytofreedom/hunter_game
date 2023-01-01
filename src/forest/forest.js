@@ -57,49 +57,32 @@ const Forest = () => {
     }
 
 
-    const [parrots, setParrots] = useState([{
-        class: "forest_raven",
-        direction: "toright",
-        speed:5,
-        point:50
-    }])
+   // const [parrots, setParrots] = useState([ranInt(6), ranInt(6), ranInt(6)]);
+
+    const [parrots, setParrots] = useState([
+        //{class:"forest_raven", direction: "toright",speed:7, point:150}
+    ])
 
 
-    const directions = ["toright", "toleft"];
     const classes = [
-                    {class:"forest_serious", direction: "toleft"}, 
-                    {class:"forest_raven", direction: "toright"}, 
-                    {class:"forest_parrot2", direction: "toleft"}, 
-                    {class:"forest_parrot_effect", direction: "toright"}, 
-                    {class:"forest_red", direction: "toleft"},
-                    {class:"forest_parrot3", direction: "toright"},
+                    {class:"forest_serious", direction: "toleft", speed:9, point:250}, 
+                    {class:"forest_raven", direction: "toright",speed:7, point:150},  
+                    {class:"forest_parrot2", direction: "toleft", speed:5, point:50}, 
+                    {class:"forest_parrot_effect", direction: "toright", speed:5, point:50}, 
+                    {class:"forest_red", direction: "toleft", speed:10, point:300},
+                    {class:"forest_parrot3", direction: "toright", speed:6, point:100},
         ]
 
     useEffect(() => {
         const move = setTimeout(() => {
-            const parrot = classes[ranInt(6)];
-            setParrots([...parrots,
-                ...[
-                    {
-                        class: parrot.class,
-                        direction: parrot.direction,
-                        speed:5,
-                        point:50
-                    },
-                    /* {
-                        class: "forest_serious",
-                        direction: "toleft",
-                        speed:5,
-                        point:50
-                    } */
-                    ]
-        ])
-        }, 3000);
+            setParrots([...parrots, classes[5]]);
+        }, 2000);
+
         if(rounds === 0)
         {
             clearTimeout(move)
         }
-    }, [rounds]);
+    },[rounds]);
     
 
 
@@ -110,7 +93,7 @@ const Forest = () => {
     <div className="forest">
 
         {
-            parrots.map(e => 
+           parrots && parrots.map(e => 
                 <Parrot
                 className={e.class} 
                 direction={e.direction} 
