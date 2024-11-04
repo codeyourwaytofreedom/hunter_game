@@ -76,12 +76,12 @@ const Forest = () => {
     ])
 
     const classes = [
-                    {class:"forest_serious", direction: "toleft", speed:9, point:250}, 
-                    {class:"forest_raven", direction: "toright",speed:7, point:150},  
+                    {class:"forest_serious", direction: "toleft", speed:10, point:350}, 
+                    {class:"forest_raven", direction: "toright",speed:9, point:150},  
                     {class:"forest_parrot2", direction: "toleft", speed:7, point:150}, 
                     {class:"forest_parrot_effect", direction: "toright", speed:8, point:200}, 
-                    {class:"forest_red", direction: "toleft", speed:10, point:300},
-                    {class:"forest_parrot3", direction: "toright", speed:6, point:100},
+                    {class:"forest_red", direction: "toleft", speed:9, point:300},
+                    {class:"forest_parrot3", direction: "toright", speed:11, point:100},
         ]
 
     useEffect(() => {
@@ -195,11 +195,6 @@ const Forest = () => {
             }
         </div>
 
-       <h1 style={{position:"absolute", top:"0", left:"50vw"}}>
-        {score}
-       </h1>
-
-
         <div className="forest_branch">
             <img src={branch1} alt="dddd" />
         </div>
@@ -229,8 +224,10 @@ const Forest = () => {
         <div className="forest_line">
         </div>
 
-        <h1>{hit}</h1>
-        <h1>{time}</h1>
+        <div className="forest_board">
+            <span>{time}</span>
+            <span>{score}</span> 
+        </div>
 
         <div className="forest_the_end" style={{display: modal ? "grid" : "none"}}>
             <div className="forest_the_end_kernel">

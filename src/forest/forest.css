@@ -24,6 +24,25 @@ html, body {
   z-index: 1;
   cursor: none;
 }
+.forest_board {
+  position: absolute;
+  top: 10px;
+  left: 45%;
+  width: 200px;
+  height: 70px;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  font-size: 25px !important;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  z-index: 1;
+}
+.forest_board span {
+  font-size: 40px !important;
+}
 .forest_the_end {
   position: fixed;
   top: 0;
